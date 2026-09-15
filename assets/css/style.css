@@ -1,8 +1,13 @@
 :root {
-  --bg: #F4F1E8;
-  --text: #1a1a1a;
-  --accent: #7A9E78;
-  --accent-dark: #3f6b3d;
+  --bg: #f3f0e6;
+  --text: #000000;
+  --accent: #799d77;
+  --accent-light: #96b091;
+  --accent-lighter: #b6c6ae;
+  --accent-border: #d6dccc;
+  --accent-dark: #5c7d5a;
+  --flag: #af5cc4;
+  --flag-light: #cc8fe8;
   --border-radius: 10px;
   --serif-heading: "Fraunces", Georgia, serif;
   --serif-body: "Lora", Georgia, serif;
@@ -43,7 +48,7 @@ a:hover { color: var(--accent-dark); }
 
 header.site-header {
   padding: 1.5rem 0 1rem;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 2px solid var(--accent-border);
 }
 
 .site-header .wrap {
@@ -106,7 +111,7 @@ nav.site-nav {
   nav.site-nav.open { display: flex; }
   nav.site-nav a {
     padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid var(--accent-border);
   }
 }
 
@@ -168,7 +173,7 @@ main {
 
 .tag {
   display: inline-block;
-  background: rgba(122,158,120,0.18);
+  background: var(--accent-lighter);
   color: var(--accent-dark);
   border-radius: 999px;
   padding: 0.15em 0.75em;
@@ -180,12 +185,12 @@ main {
 blockquote {
   margin: 0;
   font-style: italic;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--flag-light);
   padding-left: 1rem;
 }
 
 footer.site-footer {
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: 2px solid var(--accent-border);
   padding: 2rem 0;
   font-size: 0.9rem;
   text-align: center;
@@ -209,7 +214,8 @@ footer.site-footer a { color: rgba(0,0,0,0.6); }
 }
 
 .notice {
-  background: rgba(122,158,120,0.15);
+  background: rgba(175,92,196,0.1);
+  border-left: 3px solid var(--flag);
   border-radius: var(--border-radius);
   padding: 1rem 1.25rem;
   font-size: 0.95rem;

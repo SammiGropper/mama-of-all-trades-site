@@ -2,8 +2,8 @@ title: Mama of All Trades
 description: >-
   Sammi Gropper — Certified Breastfeeding Counselor and pumping specialist,
   Long Island real estate agent, and children's book author.
-url: ""
-baseurl: "/mama-of-all-trades-site"
+url: "https://mamaofalltrades.net"
+baseurl: ""
 
 plugins:
   - jekyll-seo-tag
