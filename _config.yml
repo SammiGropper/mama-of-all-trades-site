@@ -3,7 +3,7 @@ description: >-
   Sammi Gropper — Certified Breastfeeding Counselor and pumping specialist,
   Long Island real estate agent, and children's book author.
 url: ""
-baseurl: ""
+baseurl: "/mama-of-all-trades-site"
 
 plugins:
   - jekyll-seo-tag
