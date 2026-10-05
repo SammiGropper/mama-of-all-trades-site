@@ -1,12 +1,13 @@
 ---
 title: Home
 permalink: /
+hero_title: You don't have to do this alone
+hero_sub: Real, honest support for nursing, pumping, buying or selling a home on Long Island, and everything in between.
+hero_cta: See consults & packages
+hero_cta_url: /offers/
+hero_cta2: Let's talk real estate
+hero_cta2_url: /real-estate/
 ---
-
-# You don't have to do this alone
-
-Real, honest support for nursing, pumping, buying or selling a home on
-Long Island, and everything in between.
 
 <div class="grid">
   <div class="card">

@@ -126,6 +126,36 @@ nav.site-nav a.active {
   border-bottom-color: var(--accent);
 }
 
+.hero {
+  background: linear-gradient(135deg, var(--accent-lighter) 0%, var(--bg) 65%);
+  border-bottom: 2px solid var(--accent-border);
+  padding: 4.5rem 0;
+}
+
+.hero h1 {
+  font-size: 3.1rem;
+  margin-bottom: 0.4em;
+  max-width: 14ch;
+}
+
+.hero-sub {
+  font-size: 1.3rem;
+  margin: 0 0 1.75rem;
+  max-width: 50ch;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 2.75rem 0; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-sub { font-size: 1.1rem; }
+}
+
 main {
   padding: 3rem 0 4rem;
 }
