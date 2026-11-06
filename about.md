@@ -5,11 +5,11 @@ permalink: /about/
 
 # About Sammi
 
-<div class="avatar-placeholder">SG</div>
+<img class="about-photo" src="/assets/img/sammi-photo.jpg" alt="Sammi Gropper">
 
 I'm a former elementary teacher turned real estate agent, children's book
-author, and Certified Breastfeeding Counselor — juggling motherhood, career
-transitions, and way too many roles with humor, corny charm, and occasional
+author, and Certified Breastfeeding Counselor, doing motherhood, career
+changes, and way too many roles with humor, corny charm, and occasional
 messy bun moments.
 
 A jack of all trades is a master of none, but oftentimes better than a
@@ -25,7 +25,7 @@ master of one. That's the whole idea behind Mama of All Trades.
 - **Real estate agent.** I made the leap from teaching because I love
   building relationships and helping people find their perfect place to
   call home.
-- **Author.** Two published children's books, with more on the way, all
+- **Author.** Three published children's books, all
   STEM-focused for the kid who asks a hundred "why" questions a day.
 
 <div class="grid" style="margin-top:2rem;">
