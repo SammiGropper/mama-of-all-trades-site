@@ -1,0 +1,341 @@
+---
+layout: null
+permalink: /
+title: Home
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mama of All Trades</title>
+<style>
+  :root {
+    --bg: #f3f0e6;
+    --ink: #000000;
+    --sub: #5c6b59;
+    --line: #d6dccc;
+    --sage: #799d77;
+    --sage-light: #96b091;
+    --sage-soft: #e8f0e6;
+    --purple: #af5cc4;
+    --purple-light: #cc8fe8;
+    --purple-soft: #f3e6f8;
+    --gold: #f4c84a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(243,240,230,0.92); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1040px; margin: 0 auto;
+  }
+  .nav .logo { font-weight: 800; font-size: 16px; text-decoration: none; }
+  .nav .links { display: flex; gap: 18px; font-size: 13.5px; font-weight: 600; }
+  .nav .links a { text-decoration: none; }
+  .nav .links a:hover { color: var(--sage); }
+
+  section { max-width: 1040px; margin: 0 auto; padding: 64px 24px; }
+
+  .hero {
+    padding: 70px 24px 60px;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  }
+  .hero .hero-photo {
+    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%;
+    border-radius: 28px; box-shadow: 0 18px 40px rgba(121,157,119,0.25);
+    border: 6px solid #fff;
+  }
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; text-align: center; gap: 30px; padding-top: 40px; }
+    .hero .hero-photo { max-width: 320px; margin: 0 auto; display: block; }
+    .hero .cta-row { justify-content: center; }
+    .hero p { margin-left: auto; margin-right: auto; }
+  }
+  .nav .logo { display: flex; align-items: center; gap: 10px; }
+  @media (max-width: 560px) {
+    .nav { flex-direction: column; gap: 8px; padding: 10px 16px; }
+    .nav .links { gap: 6px 14px; font-size: 13px; flex-wrap: wrap; justify-content: center; }
+  }
+  .nav .logo img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; object-position: center 20%; }
+  .hero .eyebrow {
+    display: inline-block; background: var(--purple-soft); color: var(--purple);
+    font-weight: 700; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 999px; margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 6vw, 54px); font-weight: 800; line-height: 1.1; margin: 0 0 18px;
+  }
+  .hero p {
+    font-size: 18px; color: var(--sub); max-width: 560px; margin: 0 0 30px;
+  }
+  .hero .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 700; font-size: 15px;
+    padding: 14px 26px; border-radius: 999px;
+  }
+  .btn.primary { background: var(--sage); color: #fff; box-shadow: 0 6px 18px rgba(121,157,119,0.35); }
+  .btn.secondary { background: #fff; color: var(--ink); border: 1.5px solid var(--line); }
+
+  h2.section-title {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800;
+    color: var(--sub); text-align: center; margin: 0 0 10px;
+  }
+  h2.big-title { font-size: clamp(26px, 4vw, 36px); font-weight: 800; text-align: center; margin: 0 0 44px; }
+
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
+
+  .service-card {
+    border-radius: 24px; padding: 36px 32px; text-decoration: none; color: var(--ink);
+    display: flex; flex-direction: column;
+  }
+  .service-card .icon {
+    width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center;
+    justify-content: center; font-size: 28px; margin-bottom: 20px; background: rgba(255,255,255,0.6);
+  }
+  .service-card h3 { font-size: 21px; font-weight: 800; margin: 0 0 10px; }
+  .service-card p { font-size: 15px; margin: 0 0 20px; opacity: 0.85; }
+  .service-card .go { font-weight: 700; font-size: 14.5px; margin-top: auto; }
+
+  .podcast-card, .books-card {
+    border-radius: 24px; padding: 40px 36px; text-align: center;
+  }
+  .podcast-card h3, .books-card h3 { font-size: 24px; font-weight: 800; margin: 14px 0 10px; }
+  .podcast-card p, .books-card p { font-size: 15.5px; color: var(--sub); max-width: 460px; margin: 0 auto 20px; }
+  .big-emoji { font-size: 44px; }
+
+  .book-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+  .book-tile {
+    width: 130px; background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 14px; font-size: 13px; font-weight: 700;
+  }
+  .book-tile .b-emoji { font-size: 30px; margin-bottom: 8px; display: block; }
+
+  .testimonial-note {
+    text-align: center; color: var(--sub); font-size: 13.5px; font-style: italic;
+    border: 1px dashed var(--line); border-radius: 16px; padding: 20px;
+  }
+
+  .events-banner {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    color: #fff; border-radius: 24px; padding: 34px 36px;
+  }
+  .events-banner .et { flex: 1 1 260px; }
+  .events-banner h3 { font-size: 21px; font-weight: 800; margin: 0 0 6px; }
+  .events-banner p { margin: 0; font-size: 14.5px; opacity: 0.92; }
+  .events-banner .btn.secondary { background: #fff; color: var(--purple); border: none; flex-shrink: 0; }
+
+  .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 720px) { .t-grid { grid-template-columns: 1fr; } }
+  .t-card {
+    background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px;
+  }
+  .t-card .stars { color: var(--gold); font-size: 14px; margin-bottom: 10px; letter-spacing: 1px; }
+  .t-card p { font-size: 14px; margin: 0 0 14px; }
+  .t-card .who { font-size: 13px; font-weight: 700; color: var(--sub); }
+  .t-card .who span { font-weight: 400; opacity: 0.8; }
+  .t-more { text-align: center; margin-top: 20px; }
+  .t-more a { font-weight: 700; font-size: 14px; }
+
+  footer {
+    text-align: center; padding: 50px 24px 60px; color: var(--sub); font-size: 13.5px;
+  }
+  footer a { font-weight: 700; text-decoration: none; }
+  .about {
+    display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: center;
+  }
+  .about img {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 25%;
+    border-radius: 28px; border: 6px solid #fff; box-shadow: 0 18px 40px rgba(175,92,196,0.18);
+  }
+  .about h2.big-title, .about h2.section-title { text-align: left; }
+  .about h2.big-title { margin-bottom: 18px; }
+  .about p { font-size: 16.5px; margin: 0 0 14px; }
+  .about .sign { font-weight: 800; font-size: 18px; color: var(--purple); margin-top: 18px; }
+  @media (max-width: 720px) {
+    .about { grid-template-columns: 1fr; gap: 28px; }
+    .about img { max-width: 300px; margin: 0 auto; display: block; }
+    .about h2.big-title, .about h2.section-title { text-align: center; }
+  }
+  .newsletter {
+    background: var(--sage); color: #fff; border-radius: 28px; padding: 48px 36px; text-align: center;
+  }
+  .newsletter .nl-eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; opacity: 0.9; }
+  .newsletter h3 { font-size: clamp(26px, 4vw, 34px); font-weight: 800; margin: 10px 0 12px; }
+  .newsletter p { font-size: 16px; max-width: 520px; margin: 0 auto 26px; opacity: 0.95; }
+  .newsletter .btn { background: #fff; color: var(--sage); }
+  .newsletter .fine { font-size: 13px; opacity: 0.85; margin: 16px 0 0; }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="logo" href="#top"><img src="/assets/img/logo.png" alt="">Mama of All Trades</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="/offers/">Consults</a>
+      <a href="/resources/">Free Guides</a>
+      <a href="/real-estate/">Real Estate</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/books/">Books</a>
+      <a href="/discounts/">Discounts</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="top">
+    <div>
+      <div class="eyebrow">Huntington, NY</div>
+      <h1>You don't have to do this alone.</h1>
+      <p>Real, honest support for nursing, pumping, buying or selling a home on Long Island, and everything in between.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://calendly.com/mamaofalltrades1" target="_blank" rel="noopener">Book a Consult</a>
+        <a class="btn secondary" href="/discounts/">All My Links</a>
+      </div>
+    </div>
+    <img class="hero-photo" src="/assets/img/sammi-photo-2.jpg" alt="Sammi Gropper smiling and holding breast pump parts">
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <img src="/assets/img/sammi-photo.jpg" alt="Sammi Gropper smiling, holding a breast pump">
+      <div>
+        <h2 class="section-title">About Me</h2>
+        <h2 class="big-title">Hi, I'm Sammi 🤍</h2>
+        <p>I'm a mom of two (hi Remi and Cole!), married to my high school sweetheart Zach, and a Long Island girl through and through. Born and raised in Merrick, now raising my family in Huntington.</p>
+        <p>I spent years teaching K-5 STEM. Then I became a mom, started pumping, and the only advice my OB gave me was to follow someone on Instagram. So I got certified instead. Now I'm a Certified Breastfeeding Counselor and pumping specialist, and I've helped 100+ moms find a plan that actually works for their life.</p>
+        <p>I'm also a real estate agent with Signature Premier Properties, a 3x children's book author, and co-host of the Struggle Out Loud podcast. Mama of all trades, for real.</p>
+        <p>You're not doing it wrong. And you don't have to do it alone.</p>
+        <div class="sign">xo, Sammi</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lactation">
+    <h2 class="section-title">What I Do</h2>
+    <h2 class="big-title">Two worlds, one person you can trust</h2>
+    <div class="two-col">
+      <a class="service-card" href="https://calendly.com/mamaofalltrades1" target="_blank" rel="noopener" style="background:var(--sage-soft);">
+        <div class="icon" style="color:var(--sage);">🍼</div>
+        <h3>Nursing &amp; Pumping Consults</h3>
+        <p>Certified Breastfeeding Counselor, pumping specialist. Flange sizing, schedules, and a plan that actually fits your life.</p>
+        <span class="go" style="color:var(--sage);">Book a consult →</span>
+      </a>
+      <a class="service-card" id="realestate" href="https://www.zillow.com/profile/sammigropper" target="_blank" rel="noopener" style="background:var(--purple-soft);">
+        <div class="icon" style="color:var(--purple);">🏡</div>
+        <h3>Buying or Selling on Long Island</h3>
+        <p>Top Agent on Zillow &middot; Signature Premier Properties, member of The Lenard Team. Guidance with care, clarity, and confidence.</p>
+        <span class="go" style="color:var(--purple);">See my Zillow profile →</span>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+      <a href="/resources/" style="font-size:13.5px;font-weight:700;color:var(--sage);">🍼 Grab my free pumping + feeding guides →</a>
+      <a href="https://samanthagropper.signature-premier.com/" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:var(--purple);">Or visit my Signature Premier profile →</a>
+    </div>
+  </section>
+
+  <section id="podcast">
+    <div class="podcast-card" style="background:#fff;border:1px solid var(--line);">
+      <div class="big-emoji">🎙️</div>
+      <h3>Struggle Out Loud</h3>
+      <p>Real, raw mom talk with co-host Alexa. Postpartum, pumping, mental load, and everything nobody warns you about.</p>
+      <a class="btn primary" href="https://open.spotify.com/show/1vG5Hl4jjIxnatRMmHBeQI" target="_blank" rel="noopener">Listen on Spotify</a>
+    </div>
+  </section>
+
+  <section id="books">
+    <div class="books-card" style="background:var(--sage-soft);">
+      <div class="big-emoji">📚</div>
+      <h3>STEM Stories for Little Explorers</h3>
+      <p>Three books, written for kids who ask a hundred questions a day (mine included).</p>
+      <div class="book-row">
+        <a class="book-tile" href="https://www.amazon.com/dp/1736878107?tag=sammigropper-20" target="_blank" rel="noopener"><span class="b-emoji">🌱</span>Going Green in Quarantine</a>
+        <a class="book-tile" href="https://www.amazon.com/dp/1736878123?tag=sammigropper-20" target="_blank" rel="noopener"><span class="b-emoji">🐛</span>Watch Out for the Bug</a>
+        <a class="book-tile" href="https://www.amazon.com/dp/1736878131?tag=sammigropper-20" target="_blank" rel="noopener"><span class="b-emoji">🚧</span>The Big Dig <span style="font-weight:400;opacity:0.6;">(newest)</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">What People Say</h2>
+    <h2 class="big-title">Real Estate Reviews</h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"Sam is AMAZING! The home buying process is stressful already, and Sam made sure that we were not only comfortable, but happy the entire process. She kept close contact with us and all parties involved, and reached out often to check in. I cannot recommend Sam enough to be your realtor!!!"</p>
+        <div class="who">Annette Tekverk <span>&middot; bought in Smithtown, NY</span></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"Samantha was incredible! She helped us navigate a near impossible situation multiple times. She was always optimistic when we were not. And she helped us get our dream home in the end. Forever thankful!"</p>
+        <div class="who">Micheline Goulart <span>&middot; bought in Northport, NY</span></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"Sammi is not only a great friend, but the best realtor experience I've ever had. She builds relationships with everyone involved and single handedly got our deal to go through by working closely with the agent, lawyers and all hands involved."</p>
+        <div class="who">Verified Buyer <span>&middot; bought in 2026</span></div>
+      </div>
+    </div>
+    <div class="t-more"><a href="https://www.zillow.com/profile/sammigropper" target="_blank" rel="noopener">Read more Zillow reviews →</a></div>
+  </section>
+
+  <section style="padding-top:0;">
+    <h2 class="section-title">What Moms Say</h2>
+    <h2 class="big-title">Lactation &amp; Pumping Reviews</h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"I can't say enough amazing things about my experience with Sammi as my lactation consultant. Because of her, I am successfully breastfeeding and producing, something I honestly wasn't sure would be possible. She didn't just offer encouragement — she equipped me with real knowledge and confidence."</p>
+        <div class="who">Jillian Laviano</div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"Sammi completely changed my pumping experience. I was on the verge of quitting, just 2 weeks in, and with simple yet effective tools and knowledge I am now 12 weeks in with a healthy supply. I highly recommend Sammi for anyone exploring a breastfeeding/pumping journey."</p>
+        <div class="who">Samara Pomerantz</div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"I honestly wasn't planning on breastfeeding, so I started with very little knowledge. Sammi was incredible from the very beginning — she checked in on me constantly, almost every day. I truly don't know what I would have done without her help during those early postpartum days."</p>
+        <div class="who">Holly Roselle <span>&middot; 9 reviews, 5.0 overall</span></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"I worked with Sammi before I had my son, and I'm so grateful I did. She explained everything clearly and shared so much more helpful information than the lactation coach I met at the hospital. I felt truly prepared because of her guidance."</p>
+        <div class="who">Liza Forman</div>
+      </div>
+    </div>
+    <div class="t-more"><a href="https://www.google.com/search?q=mama+of+all+trades&oq=mama+of+all+trades&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARAjGCcyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yBggFEEUYQTIGCAYQRRhBMgYIBxBFGDzSAQgyMjM4ajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8#lrd=0xaff852c1e8965bb1:0x9ccb2bcca4fe0d67,1,,," target="_blank" rel="noopener">Read more Google reviews →</a></div>
+  </section>
+
+  <section id="newsletter" style="padding-top:0;">
+    <div class="newsletter">
+      <div class="nl-eyebrow">The Newsletter</div>
+      <h3>Join 2,000+ Long Island moms</h3>
+      <p>The good stuff, straight to your inbox: pumping tips, local events, a local business I love, my favorite finds and discount codes, and what's happening in Long Island real estate. No spam, just me.</p>
+      <a class="btn" href="https://mamaofalltrades.myflodesk.com/cwfzvipz8s" target="_blank" rel="noopener">Sign me up</a>
+      <p class="fine">Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://www.instagram.com/sammigropper" target="_blank" rel="noopener">@sammigropper on Instagram</a>
+    <div style="margin-top:8px;">&copy; 2026 Mama of All Trades</div>
+  </footer>
+
+</body>
+</html>

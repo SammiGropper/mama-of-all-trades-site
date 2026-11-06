@@ -23,12 +23,6 @@ plus two weeks of text support after we meet.</div>
     <a class="btn" href="https://calendly.com/mamaofalltrades1">Book in-person</a>
   </div>
   <div class="card">
-    <h3>In-Office Consult</h3>
-    <p>1 hour, at my East Northport office.</p>
-    <p><em>See current price on Calendly</em></p>
-    <a class="btn" href="https://calendly.com/mamaofalltrades1">Book in-office</a>
-  </div>
-  <div class="card">
     <h3>Early Confidence Package</h3>
     <p>Two sessions: one 45-minute prenatal consult, one 45-minute
     postpartum consult.</p>
