@@ -116,3 +116,22 @@ footer.site-footer { text-align: center; padding: 40px 24px 60px; color: var(--s
 footer.site-footer a { font-weight: 700; text-decoration: none; }
 .footer-links { display: flex; gap: 8px 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
 .footer-links a { font-weight: 600 !important; color: var(--ink); }
+
+/* Real estate stats + homes */
+.center { text-align: center; }
+p.sub { color: var(--sub); margin-top: -6px; }
+p.small { font-size: 13px; color: var(--sub); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+@media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+.stat { background: var(--sage); color: #fff; border-radius: 22px; padding: 22px 16px; text-align: center; }
+.stat:nth-child(even) { background: var(--purple); }
+.stat-num { font-size: clamp(28px, 5vw, 40px); font-weight: 800; line-height: 1.1; }
+.stat-label { font-size: 13.5px; opacity: 0.95; margin-top: 6px; line-height: 1.35; }
+.homes { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 20px; }
+.home { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 18px 16px; }
+.home-status { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; background: var(--sage-soft); color: var(--sage); padding: 4px 10px; border-radius: 999px; }
+.home.pending .home-status { background: var(--purple-soft); color: var(--purple); }
+.home-town { font-weight: 800; font-size: 18px; margin-top: 10px; }
+.home-price { font-size: 16px; color: var(--sub); font-weight: 600; }
+.home-note { font-size: 12px; color: var(--sub); }
+.stars { color: #f4c84a; letter-spacing: 1px; margin-bottom: 8px; }
